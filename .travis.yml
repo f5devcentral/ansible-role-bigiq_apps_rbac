@@ -28,7 +28,6 @@ before_script:
 
 script:
   # Run tests.
-#  - molecule test
   - echo "test"
 
 notifications:
