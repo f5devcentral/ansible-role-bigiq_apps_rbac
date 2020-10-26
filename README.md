@@ -1,6 +1,6 @@
 # Ansible Role: bigiq_apps_rbac
 
-Performs a series of steps needed to assign Application Services Viewer or Manager roles to users having access to existing top Application object in BIG-IQ.
+Performs a series of steps needed to assign or unassign **Application Services Viewer or Manager** roles to user(s) having access to existing top Application object in BIG-IQ.
 
 ## Role Variables
 
@@ -23,8 +23,11 @@ Look under BIG-IQ **System > Role Management > Roles > Custom Roles > Applicatio
 The role name is based on the app name + Viewer or Manager. Example below with an Application called `BusinessUnit1` and
 an Application Service called `App1_MyHttpService`.
 
+If you specify ``unassign_user`` with a username, the role will unassign the user to the ``application_service_role_name``.
+
     application_role_name: "BusinessUnit1 Viewer"
     application_service_role_name: "App1_MyHttpService Viewer"
+    unassign_user: peter # optional
 
 ## Example Playbooks
 
